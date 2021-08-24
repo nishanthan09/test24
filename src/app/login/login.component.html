@@ -1,0 +1,93 @@
+<form [formGroup]="loginForm" (ngSubmit)="submit()" style="text-align: center;">
+    <div class="hi">
+    <div class="row g-3 align-items-center" style="padding-left: 41%;">
+      <div class="col-auto" style="padding-left: 12px;"> 
+          <label>User name</label><br>
+          <input type="text" placeholder="User name" formControlName="name" class="form-control" [ngClass]="{ 'is- invalid': submitted && f.name.errors || f.name.touched}" >
+        <div *ngIf="submitted && f.name.errors" class=" invalid-feedback">
+        <div *ngIf="f.name.errors.required ">User name is required</div>
+     </div>
+     <div *ngIf="f.name.touched" class=" invalid-feedback">
+      <div *ngIf="f.name.touched">Enter your Username </div>
+   </div>
+           <label>Email</label><br>
+           <input type="text" placeholder="Email" formControlName="mail" class="form-control" [ngClass]="{ 'is- invalid': submitted && f.mail.errors  || f.mail.touched}" >
+         <div *ngIf="submitted && f.mail.errors" class=" invalid-feedback">
+       <div *ngIf="f.mail.errors.required">Email Id is required</div>
+     </div>
+     <div *ngIf="f.mail.touched" class=" invalid-feedback">
+      <div *ngIf="f.mail.touched">Enter your mail id </div>
+   </div>
+    <div>
+          <label>Password</label><br>
+          <input type="password" placeholder="Password" pattern="^(?:(?:(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))|(?:(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))|(?:(?=.*[0-9])(?=.*[a-z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]))).{8,32}$" autocomplete="off" formControlName="password" class="form-control" [ngClass]="{ 'is- invalid': submitted && f.password.errors  || f.password.touched}" >
+          <div *ngIf="submitted && f.password.errors " class=" invalid-feedback">
+         <div *ngIf="f.password.errors.required">Password is required</div>
+       </div>
+       <div *ngIf="f.password.touched" class=" invalid-feedback">
+        <div *ngIf="f.password.touched">Enter your password </div>
+     </div>
+          <app-password-strength ></app-password-strength>
+         </div>
+        
+         <label>Mobile Number</label><br>
+        <input type="text" placeholder="Mobile Number" formControlName="mobile" class="form-control" [ngClass]="{ 'is- invalid': submitted && f.mobile.errors  || f.mobile.touched}" >
+        <div *ngIf="submitted && f.mobile.errors" class=" invalid-feedback">
+        <div *ngIf="f.mobile.errors.required">Mobile Number is required</div>
+      </div>
+      <div *ngIf="f.mobile.touched" class=" invalid-feedback">
+        <div *ngIf="f.mobile.touched">Enter your mobile Number </div>
+     </div>
+        <label>Salary</label><br>
+        <input type="text" placeholder="Salary" formControlName="pin" class="form-control" [ngClass]="{ 'is- invalid': submitted && f.pin.errors  || f.pin.touched}" >
+        <div *ngIf="submitted && f.pin.errors" class=" invalid-feedback">
+        <div *ngIf="f.pin.errors.required">Pin Code is required</div>  
+      </div>
+      <div *ngIf="f.pin.touched" class=" invalid-feedback">
+        <div *ngIf="f.pin.touched">Enter your Salary </div>
+     </div>
+      <label for="cars">Color</label>
+      <select name="clolr" id="colors"  formControlName="colors" class="form-control" [ngClass]="{ 'is- invalid': submitted && f.colors.errors  || f.colors.touched }" >
+        <option id="red" value="Red">Red</option>
+        <option id="pink" value="pink">Pink</option>
+        <option id="blue" value="Blue">Blue</option>
+        <option id="greenyellow" value="greenyellow">yellow</option>
+      </select>
+       <div *ngIf="submitted && f.colors.errors" class=" invalid-feedback">
+        <div *ngIf="f.colors.errors.required">color Code is required</div>
+      </div>
+      <div *ngIf="f.colors.touched" class=" invalid-feedback">
+        <div *ngIf="f.colors.touched">Select any Color </div>
+     </div>
+      
+    </div>
+     </div>
+    </div>
+      <button type="submit"class="btn btn-info" >Submit</button>
+      <button type="button"(click)="get()" class="btn btn-danger">GetData</button>
+    <div class="Hello">
+      <table>
+        <tr *ngIf="condition">
+          <th>Id</th>
+          <th>UserName</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Mobile Number</th>
+          <th>Total<br><!-- Salary :{{sum}} --></th>
+          <th>Color</th>
+          <th>Button</th>
+        </tr>
+        <tr *ngFor="let item of ShowAll"[ngStyle]="{'background-color':item.colors}">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.mail}}</td>
+          <td>{{item.password}}</td>
+          <td>{{item.mobile}}</td>
+          <td>{{item.pin}}</td>
+          <td>{{item.colors}}</td>
+          <button type="button"(click)="edit(item.id)" class="btn btn-warning ">Edit</button>
+          <button type="button"(click)="delete(item.id)"class="btn btn-success">Delete</button>
+        </tr>
+      </table>
+    </div>
+  </form>

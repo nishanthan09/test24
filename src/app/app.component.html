@@ -1,0 +1,79 @@
+<h1 style="text-align: center;">Task</h1>
+<body><table>
+  <tr>
+    <th>S.No</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Constraints</th>
+    <th>Button</th>
+    <th>CheckBox</th>
+    <th>CheckBox</th>
+    <th>Show Value</th>
+  
+  </tr>
+  <tr *ngFor="let item of data,let i= index" (click)="save(item.constraints)">
+    <td>{{i}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.age}}</td>
+    <td>{{item.constraints}}</td>
+    <td><button style="width: 100%;" >{{item.constraints}}</button></td>
+    <td><input type="checkbox" (click)="click(i)"(change)="onchange(i,item)">{{item.check}}</td>
+    <td>{{item.box}}</td>
+    <td>{{item.you}}</td>
+    
+    
+    <!-- <div>{{}}</div> -->
+  </tr>
+</table>
+<div *ngIf="showedit" class="="edit>
+  <button [disabled]="disabled">Edit</button>
+
+</div></body>
+<mat-toolbar style="background-color:purple" class="mat-elevation-z5">
+
+  <mat-toolbar-row>
+    <span style="color:skyblue;">E</span>
+    <span style="color: red;">x</span>
+    <span style="color: yellow;">p</span>
+    <span style="color: green;">l</span>
+    <span style="color:red;">o</span>
+    <span style="color: royalblue;">r</span>
+    <span style="color:salmon;">e</span>
+    <span style="color: silver;">E</span>
+    <span style="color: tomato;">v</span>
+    <span style="color: violet;">e</span>
+    <span style="color: hotpink;">y</span>
+    <span style="color: papayawhip;">t</span>
+    <span style="color: springgreen;">h</span>
+    <span style="color: black;">i</span>
+    <span style="color: red;">n</span>
+    <span style="color: yellowgreen;">g</span>
+  
+  
+  
+  
+    <span class="example-spacer"></span>
+   <button mat-icon-button > <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">logout</mat-icon></button>
+   <button mat-icon-button> <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">settings</mat-icon></button>
+  </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" opened style="width: 200px;"><br>
+  
+     
+      <a routerLink='login'> <button mat-button style="height: 60px;"><mat-icon>login</mat-icon> Login</button></a>
+      <a routerLink='new'><button mat-button style="height: 60px;"><mat-icon>input</mat-icon> NewUser</button></a>
+      <a routerLink='About'><button mat-button style="height: 60px;"><mat-icon>info</mat-icon>About </button></a>
+      <a routerLink='Contact'> <button mat-button style="height: 60px;"><mat-icon>phone_in_talk</mat-icon> contact</button></a>
+  
+    </mat-sidenav>
+  <mat-sidenav-content>
+   
+
+    <p style="height:88vh ">
+      
+      <router-outlet></router-outlet>
+    </p>
+  </mat-sidenav-content>
+  </mat-sidenav-container>
+  

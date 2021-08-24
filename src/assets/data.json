@@ -1,0 +1,58 @@
+{
+  "Nishanthan": [
+    {
+      "name": "Nishanthan.R",
+      "mail": "nishanthan2004@gmail.com",
+      "password": "Nishanthan09",
+      "mobile": 9342281886,
+      "pin": "600000",
+      "colors": "pink",
+      "id": 1
+    },
+    {
+      "name": "praveen.B",
+      "mail": "praveen@gmail.com",
+      "password": "Praveen28#",
+      "mobile": 9876542127,
+      "pin": "600000",
+      "colors": "Red",
+      "id": 2
+    },
+    {
+      "name": "Gokul.R",
+      "mail": "gokul@gmail.com",
+      "password": "Gokul@02",
+      "mobile": "1234567890",
+      "pin": "120000",
+      "colors": "Blue",
+      "id": 3
+    },
+    {
+      "name": "Marco",
+      "mail": "marco@gmail.com",
+      "password": "Marco09@",
+      "mobile": "9342281886",
+      "pin": "999999",
+      "colors": "greenyellow",
+      "id": 4
+    },
+    {
+      "name": "nishanthan",
+      "mail": "nc@dtf",
+      "password": "345678ijhhjkN@3d",
+      "mobile": "1234567890",
+      "pin": "123456",
+      "colors": "pink",
+      "id": 5
+    },
+    {
+      "name": "n",
+      "mail": "mn@nnf",
+      "password": "Nidicf2934",
+      "mobile": "1234567890",
+      "pin": "123456",
+      "colors": "pink",
+      "id": 6
+    }
+  ]
+}

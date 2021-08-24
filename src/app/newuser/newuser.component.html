@@ -1,0 +1,27 @@
+<form [formGroup]="loginForm" (ngSubmit)="submit()" style="text-align: center;">
+    <div class="row g-3 align-items-center" style="padding-left: 41%;">
+      <div class="col-auto" style="padding-left: 12px;"> 
+          <label>Username</label><br>
+          <input type="text" placeholder="Username" formControlName="name" class="form-control" [ngClass]="{ 'is- invalid': submitted && f.name.errors}" >
+        <div *ngIf="submitted && f.name.errors" class=" invalid-feedback">
+        <div *ngIf="f.name.errors.required">Username is required</div>
+     </div>
+           
+    <div>
+          <label>Password</label><br>
+          <input type="password" placeholder="Password" autocomplete="off" formControlName="password" class="form-control" [ngClass]="{ 'is- invalid': submitted && f.password.errors}" >
+         <app-password-strength ></app-password-strength>
+         </div>
+         <div *ngIf="submitted && f.password.errors" class=" invalid-feedback">
+         <div *ngIf="f.password.errors.required">Password is required</div>
+         <div *ngIf="f.password.invalid && (f.password.dirty ||f. password.touched)" >
+            Please confirm your password.
+         </div>
+       </div>
+      
+        
+    </div>
+     </div>
+      <button type="submit"class="btn btn-info">Submit</button>
+
+</form>
